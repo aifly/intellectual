@@ -205,14 +205,14 @@
             var stage = new createjs.Stage(canvas);
 
             var shape = new createjs.Shape();
-            shape.graphics.setStrokeStyle(10).beginFill('rgba(0,0,0,.005)').moveTo(0,0);
+            shape.graphics.setStrokeStyle(10).beginFill('rgba(255,255,255,.008)').moveTo(0,0);
             shape.graphics.lineTo(width/2+5,0);
             shape.graphics.lineTo(width/3.1,height/2.6);
             shape.graphics.lineTo(0,height/3.7)
             stage.addChild(shape);
 
             var shape1 = new createjs.Shape();
-            shape1.graphics.setStrokeStyle(10).beginFill('rgba(255,0,0,.005)').moveTo(width/2,0);
+            shape1.graphics.setStrokeStyle(10).beginFill('rgba(255,255,255,.008)').moveTo(width/2,0);
             shape1.graphics.lineTo(width,0);
             shape1.graphics.lineTo(width,10);
             shape1.graphics.lineTo(width/5*4,height/2);
@@ -222,7 +222,7 @@
 
 
             var shape2 = new createjs.Shape();
-            shape2.graphics.setStrokeStyle(10).beginFill('rgba(255,0,0,.005)').moveTo(width,10);
+            shape2.graphics.setStrokeStyle(10).beginFill('rgba(255,255,255,.008)').moveTo(width,10);
             shape2.graphics.lineTo(width/1.4,height/1.6);
             shape2.graphics.lineTo(width,height/1.4);
             shape2.graphics.lineTo(width,10);
@@ -230,7 +230,7 @@
             stage.addChild(shape2);
 
             var shape3 = new createjs.Shape();
-            shape3.graphics.setStrokeStyle(10).beginFill('rgba(255,0,0,.005)').moveTo(0,height/3.7);
+            shape3.graphics.setStrokeStyle(10).beginFill('rgba(255,255,255,.008)').moveTo(0,height/3.7);
             shape3.graphics.lineTo(0,height);
             shape3.graphics.lineTo(10,height);
             shape3.graphics.lineTo(width/3.3,height/2.4);
@@ -239,7 +239,7 @@
             stage.addChild(shape3);
 
             var shape4 = new createjs.Shape();
-            shape4.graphics.setStrokeStyle(10).beginFill('rgba(255,0,0,.005)').moveTo(10,height);
+            shape4.graphics.setStrokeStyle(10).beginFill('rgba(255,255,255,.008)').moveTo(10,height);
             shape4.graphics.lineTo(width/3.5,height/2);
             shape4.graphics.lineTo(width/1.3,height/2);
             shape4.graphics.lineTo(width/1.8,height);
@@ -249,7 +249,7 @@
 
 
             var shape5 = new createjs.Shape();
-            shape5.graphics.setStrokeStyle(10).beginFill('rgba(255,0,0,.001)').moveTo(width,height);
+            shape5.graphics.setStrokeStyle(10).beginFill('rgba(255,255,255,.008)').moveTo(width,height);
             shape5.graphics.lineTo(width,height/1.44);
             shape5.graphics.lineTo(width/1.4,height/1.6);
             shape5.graphics.lineTo(width/1.8,height);
@@ -257,12 +257,21 @@
 
             stage.addChild(shape5);
 
-            createjs.Touch.enable(stage,true,false); 
+            createjs.Touch.enable(stage,true,false);
+
+            var splendidLinks = [
+                'http://www.baidu.com',
+                'http://www.qq.com',
+                'http://www.zmiti.com',
+                'http://www.google.com',
+                'http://www.sogou.com',
+                'http://www.sina.com'
+            ];
 
             [shape,shape1,shape2,shape3,shape4,shape5].forEach(function(sp,i){
 
                 sp.on('mousedown',function(){
-                    alert(i)
+                    window.location.href = splendidLinks[i];
                 })
             })
 

@@ -33,6 +33,7 @@ a {
     width: 10rem;
 
     @include pos(r);
+    margin-top:-1.6rem;
 
     //min-height: 1870px;
     background: url("../images/main-bg.jpg") no-repeat center;

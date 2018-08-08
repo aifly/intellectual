@@ -1,0 +1,65 @@
+@import "./base.scss";
+  
+html, body, div, ul, li, p, section, header,h1,h2,h3,h4,h5 {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+html,body{
+    height:100%;
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 14px;
+    font-family: "Helvetica Neue", 'Helvetica', "Microsoft YaHei", arial, sans-serif;
+}
+
+img {
+    width: 100%;.
+    height: auto;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.zmiti-main-ui {
+    @include  pos(r);
+    margin-top:-1.6rem;
+    z-index: 102;
+    color:#000;
+    .zmiti-detail-content{
+        width:85%;
+        margin:0 auto; 
+        padding-top:1rem;
+        &>h3{
+            text-align:center;
+            font-size:.5rem;
+            font-weight:normal
+        } 
+        .zmiti-detail-date{
+            font-size:.3rem;
+            color:#414141;
+            height:.8rem;
+            line-height: 1rem;
+            @include  pos(r);
+            width:100%;
+            border-bottom:1px solid #414141;
+            text-align:right;
+        }
+        img{
+            margin:.5rem 0 0 0;
+        }
+        p{
+            line-height:24px;
+            margin:.5rem 0;
+            color:#000;
+        }
+    }
+}
