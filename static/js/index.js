@@ -257,26 +257,23 @@
 
             stage.addChild(shape5);
 
-            createjs.Touch.enable(stage,true,false);
+            //createjs.Touch.enable(stage,true,false);
 
-            var splendidLinks = [
-                'http://www.baidu.com',
-                'http://www.qq.com',
-                'http://www.zmiti.com',
-                'http://www.google.com',
-                'http://www.sogou.com',
-                'http://www.sina.com'
-            ];
+           
 
             [shape,shape1,shape2,shape3,shape4,shape5].forEach(function(sp,i){
 
-                sp.on('mousedown',function(){
-                    window.location.href = splendidLinks[i];
+                sp.addEventListener('click', function (e) {
+                    window.location.href = window.splendidLinks[i];
                 })
             })
 
-
-            setInterval(function(){
+            var i = 0 ;
+            var t = setInterval(function(){
+                i++;
+                if(i>100){
+                    clearInterval(t);
+                }
                 stage.update();
             },40)
 

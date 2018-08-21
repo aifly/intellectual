@@ -1,6 +1,10 @@
 (function(){
 	window.PointerEvent = undefined;
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	document.addEventListener('touchmove', function (e) {
+		e.preventDefault();
+	}, {
+		passive:false
+	});
 	var zmitiUtil = {
 		init:function(){
 
@@ -14,6 +18,9 @@
 			this.currentSize = currentSize;
 			this.loadNews(currentSize);
 			
+			if (maxLen <= currentSize){
+				$('.zmiti-pull-more').css({opacity:0});
+			}
 
 			this.setScroll()
 		},
@@ -28,6 +35,7 @@
 
 		setScroll:function(){
 			var self = this;
+			
 			var myscroll = new iScroll("zmiti-wrap",{
 				vScrollbar:true,
 				preventDefault:false,
